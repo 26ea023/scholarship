@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Donation Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">🩸 LifeLink <span>Blood Donation</span></div>
+  <nav>
+    <a href="#home">Home</a><a href="#donors">Find Donors</a><a href="#register">Become a Donor</a><a href="#request">Blood Request</a>
+  </nav>
+</header>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="eyebrow">GIVE BLOOD • SAVE LIVES</p>
+    <h1>Your one donation<br><span>can save lives.</span></h1>
+    <p>Connect blood donors with people who need help. Be someone’s reason to hope.</p>
+    <a class="btn" href="#register">Become a Donor</a>
+    <a class="btn outline" href="#donors">Find a Donor</a>
+  </div>
+  <div class="hero-card"><div class="drop">🩸</div><h3>Every drop matters</h3><p>Join our community of voluntary donors.</p></div>
+</section>
+<section class="stats">
+  <div><strong>01</strong><span>Register as donor</span></div><div><strong>02</strong><span>Find blood group</span></div><div><strong>03</strong><span>Connect responsibly</span></div>
+</section>
+<main>
+<section id="donors" class="section">
+  <div class="section-heading"><p class="eyebrow">DONOR DIRECTORY</p><h2>Find a potential donor</h2><p>Filter the sample directory by blood group and location.</p></div>
+  <div class="filters"><select id="filterGroup"><option value="">All blood groups</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select><input id="filterLocation" placeholder="Enter location"><button class="btn" onclick="filterDonors()">Search</button></div>
+  <div id="donorList" class="cards"></div>
+  <p class="note">Demo directory only. Contact and eligibility details must be verified by medical professionals/hospital blood bank.</p>
+</section>
+<section id="register" class="section tinted">
+  <div class="section-heading"><p class="eyebrow">JOIN THE COMMUNITY</p><h2>Become a donor</h2><p>Register your details to appear in this demo directory.</p></div>
+  <form id="donorForm" class="form-grid">
+    <label>Full name<input required name="name" placeholder="Your name"></label>
+    <label>Age<input required type="number" min="18" max="65" name="age" placeholder="18+" ></label>
+    <label>Blood group<select required name="group"><option value="">Choose blood group</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></label>
+    <label>Phone<input required name="phone" type="tel" placeholder="Contact number"></label>
+    <label>Email<input name="email" type="email" placeholder="Email address"></label>
+    <label>Location<input required name="location" placeholder="City / area"></label>
+    <button class="btn full" type="submit">Register as Donor</button>
+  </form>
+  <div id="registerMessage" class="message"></div>
+</section>
+<section id="request" class="section">
+  <div class="section-heading"><p class="eyebrow">REQUEST SUPPORT</p><h2>Blood request form</h2><p>Submit a request for the hospital blood bank or care team to review.</p></div>
+  <form id="requestForm" class="form-grid">
+    <label>Patient name<input required name="patient" placeholder="Patient name"></label>
+    <label>Required blood group<select required name="group"><option value="">Choose blood group</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></label>
+    <label>Hospital name<input required name="hospital" placeholder="Hospital / blood bank"></label>
+    <label>Location<input required name="location" placeholder="City / area"></label>
+    <label>Units required<input required type="number" min="1" name="units" placeholder="Number of units"></label>
+    <label>Contact number<input required type="tel" name="phone" placeholder="Contact number"></label>
+    <button class="btn full" type="submit">Submit Request</button>
+  </form>
+  <div id="requestMessage" class="message"></div>
+</section>
+</main>
+<footer><strong>LifeLink 🩸</strong><p>Blood Donation Management System — Mini Project Demo</p><small>Donor eligibility, blood compatibility, and transfusion decisions must be verified by qualified healthcare professionals.</small></footer>
+<script src="script.js"></script>
+</body>
+</html>
